@@ -20,6 +20,7 @@ name = "MyPresentation"
 [[require]]
 name = "LeanTex"
 git = "https://github.com/kiranandcode/leantex.git"
+rev = "main"
 ```
 
 If you are using a `lakefile.lean`:
