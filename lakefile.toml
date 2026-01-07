@@ -1,0 +1,10 @@
+name = "LeanTeX"
+
+[[lean_lib]]
+name = "LeanTeX"
+
+[[lean_lib]]
+name = "GenerateSlidesLib"
+
+[[lean_exe]]
+name = "GenerateSlides"

@@ -1,0 +1,13 @@
+name = "presentation_example"
+
+[[require]]
+name = "LeanTeX"
+path = "../"
+
+[[lean_lib]]
+name = "Example"
+
+# automatically inserted by LeanTex, DO NOT MODIFY
+[[lean_exe]]
+name = "GenerateSlides"
+root = "GenerateSlides"

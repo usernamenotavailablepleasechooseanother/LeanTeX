@@ -6,7 +6,7 @@
    "name": "LeanTeX",
    "manifestFile": "lake-manifest.json",
    "inherited": false,
-   "dir": "./../",
-   "configFile": "lakefile.lean"}],
+   "dir": "../",
+   "configFile": "lakefile.toml"}],
  "name": "presentation_example",
  "lakeDir": ".lake"}

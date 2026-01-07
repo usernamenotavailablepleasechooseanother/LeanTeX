@@ -21,7 +21,7 @@ structure LeanTeXConfig where
   preambleTemplate: Option (forall packages preamble:String, String)
 
 
-section Meta 
+section Meta
 open Lean Elab Command Term Meta
 syntax (name := getConfig) "#leantex_config" ident : command
 @[command_elab getConfig]

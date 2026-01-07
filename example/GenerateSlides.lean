@@ -2,9 +2,7 @@
 import Example
 import GenerateSlidesLib
 
-#declared_slides allSlides
-#declared_packages allPackages
-#declared_preamble allPreamble
+#leantex_config latexConfig
 
 unsafe def main : IO Unit := do
-   generateSlides allPackages allPreamble allSlides
+   generateSlides latexConfig

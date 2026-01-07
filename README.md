@@ -10,7 +10,19 @@ Presenting:
 
 LeanTeX is made as easy as possible to use!
 
-Create a new Lean project requiring `LeanTeX` in your `lakefile`:
+Create a new Lean project requiring `LeanTeX` in your `lakefile.toml`:
+```toml
+-- This is your presentation root
+[[lean_lib]]
+name = "MyPresentation"
+
+-- Require LeanTex!
+[[require]]
+name = "LeanTex"
+git = "https://github.com/kiranandcode/leantex.git"
+```
+
+If you are using a `lakefile.lean`:
 ```lean
 -- lakefile.lean
 package MyPresentation
@@ -19,7 +31,7 @@ package MyPresentation
 lean_lib MyPresentation where
 
 -- Require LeanTex!
-require LeanTeX from git "https://github.com/kiranandcode/leantex" @ "main"
+require LeanTeX from git "https://github.com/kiranandcode/leantex.git" @ "main"
 ```
 
 In your Lean project, you can import `LeanTeX` use its DSL to write LaTex directly from Lean:
