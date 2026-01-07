@@ -12,11 +12,11 @@ LeanTeX is made as easy as possible to use!
 
 Create a new Lean project requiring `LeanTeX` in your `lakefile.toml`:
 ```toml
--- This is your presentation root
+# This is your presentation root
 [[lean_lib]]
 name = "MyPresentation"
 
--- Require LeanTex!
+# Require LeanTex!
 [[require]]
 name = "LeanTex"
 git = "https://github.com/kiranandcode/leantex.git"
