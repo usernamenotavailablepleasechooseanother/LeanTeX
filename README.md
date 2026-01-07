@@ -35,9 +35,9 @@ import LeanTeX
 
 ```
 
-Finally, to build the presentation, run `lake exec GenerateSlides`:
+Finally, to build the presentation, run `lake exe GenerateSlides`:
 ```bash
-$ lake exec GenerateSlides
+$ lake exe GenerateSlides
 ...
 
 Output written on slides.pdf (5 pages, 33772 bytes).

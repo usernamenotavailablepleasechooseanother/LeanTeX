@@ -51,5 +51,5 @@ def main : IO Unit := do
         ++ String.intercalate "\n" prelude
      let _ <- IO.Process.spawn {
         cmd := "lake",
-        args := #["exec", "GenerateSlides"]
+        args := #["exe", "GenerateSlides"]
      }
