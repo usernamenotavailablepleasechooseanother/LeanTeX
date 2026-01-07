@@ -8,15 +8,14 @@ def prelude : List String := [
 
 def containsLeanExeDecl (s: String) :=
   s.splitOn "\n"
-  |>.findSome? (·.trim.dropPrefix? "lean_exe GenerateSlides where")
+  |>.findSome? (·.trimAscii.dropPrefix? "lean_exe GenerateSlides where")
   |>.isSome
 
 def extractDeps (s: String) :=
   s.splitOn "\n"
-  |>.map (·.trim)
+  |>.map (·.trimAscii)
   |>.filterMap (·.dropPrefix? "lean_lib ")
-  |>.filterMap (·.trim |>.splitOn " " |>.head?)
-  |>.map (·.toString)
+  |>.filterMap (·.trimAscii.toString |>.split " " |>.toStringList |>.head?)
 
 def generateSlidesLean (deps: List String) :=
    let importDeps :=
@@ -54,4 +53,3 @@ def main : IO Unit := do
         cmd := "lake",
         args := #["exec", "GenerateSlides"]
      }
-
