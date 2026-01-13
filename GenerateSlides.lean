@@ -1,5 +1,6 @@
 import Lean
 
+-- This should be rewritten to use Lake to load and parse the configs instead of brittle string manipulation
 def prelude : Bool → List String
   | true =>
     [
@@ -16,17 +17,20 @@ def prelude : Bool → List String
     ]
 
 def containsLeanExeDecl (s: String) (isToml: Bool) :=
-  s.splitOn "\n"
+  s.split "\n"
+  |>.toStringList
   |>.findSome? (·.trimAscii.dropPrefix? (if isToml then "name = \"GenerateSlides\"" else "lean_exe GenerateSlides where"))
   |>.isSome
 
 def extractDeps (s: String) : Bool → List String
   | true =>
-    s.splitOn "[["
+    s.split "[["
+    |>.toStringList
     |>.filterMap (·.dropPrefix? "lean_lib]]\nname = \"")
     |>.filterMap (·.trimAscii.toString |>.split "\"" |>.toStringList |>.head?)
   | false =>
-    s.splitOn "\n"
+    s.split "\n"
+    |>.toStringList
     |>.map (·.trimAscii)
     |>.filterMap (·.dropPrefix? "lean_lib ")
     |>.filterMap (·.trimAscii.toString |>.split " " |>.toStringList |>.head?)
